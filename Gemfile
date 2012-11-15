@@ -5,12 +5,13 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
-  gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3', '1.3.5'
+  gem 'rspec-rails', '2.9.0'
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.14.1'
 end
 
 # Gems used only for assets and not required
@@ -18,7 +19,8 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'haml'
+  gem 'haml', '3.1.7'
+  gem 'haml-rails', '0.3.5'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
@@ -26,7 +28,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
