@@ -1,16 +1,40 @@
 %header
   %nav
     %ul.top_nav
-      %li= link_to "About", about_path
-      -# 
-        %ul.about
-          %li= link_to "Mission", #
-          %li= link_to "History", #
-          %li= link_to "Know Your Food", #
-          %li= link_to "How We Run", #
-      %li= link_to "Get Involved", get_involved_path
-      %li= link_to "Products", products_path
+      %li#about
+        = link_to "About", about_path
+        %ul.sub_nav
+          %li= link_to "Mission", '#'
+          %li= link_to "History", '#'
+          %li= link_to "Know Your Food", '#'
+          %li= link_to "How We Run", '#'
+      %li#get_involved
+        = link_to "Get Involved", get_involved_path
+        %ul.sub_nav
+          %li= link_to "Memberships", '#'
+          %li= link_to "Volunteer", '#'
+          %li= link_to "Events", '#'
+          %li= link_to "Suggestions", '#'
+      %li#products
+        = link_to "Products", products_path
+        %ul.sub_nav
+          %li= link_to "Bulk", '#'
+          %li= link_to "Meat", '#'
+          %li= link_to "Dairy & Eggs", '#'
+          %li= link_to "Herbs", '#'
+          %li= link_to "Coffee", '#'
       %li= link_to "Personal Orders", personal_orders_path
-      %li= link_to "Recipes", recipes_path
-      %li= link_to "Resources", resources_path
+      %li#recipes
+        = link_to "Recipes", recipes_path
+        %ul.sub_nav
+          %li= link_to "Vegan", '#'
+          %li= link_to "Vegetarian", '#'
+          %li= link_to "Meat", '#'
+      %li#resources
+        = link_to "Resources", resources_path
+        %ul.sub_nav
+          %li= link_to "Websites", '#'
+          %li= link_to "Books", '#'
+          %li= link_to "Movies", '#'
+          %li= link_to "Zines", '#'
       %li= link_to "Contact Us", contact_path
