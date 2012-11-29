@@ -8,35 +8,37 @@ html {
   background-color: #FFEDF4;
 }
 
-ul.top_nav {
-  margin: 0 auto;
-  list-style-type: none;
-  text-align: center;
-  width: 1000px;
+nav {
+  margin-left: 0px;
+  
+  ul.top_nav {
+    list-style-type: none;
+    padding-left: 0px;
+    width: 90%;
+    margin: 0 auto;
 
-  li {
-    float: left;
-    background-color: #999;
-    border: 1px solid #ccc;
-    
-    ul {
-      list-style-type: none;
+    li {
+      float: left;
+      background-color: #999;
+      border: 1px solid #ccc;
       
-      li {
-        float: none;
-       }
-    }
+      ul {
+        list-style-type: none;
+        
+        li {
+          float: none;
+         }
+      }
 
-    a {
-      display: block;
-      text-decoration: none;
-      padding: 0 30px;
-      &:link { color: #FFFFFF; }
-      &:visited { color: #FFFFFF; }
+      a {
+        text-decoration: none;
+        padding: 0 30px;
+        &:link { color: #FFFFFF; }
+        &:visited { color: #FFFFFF; }
+      }
     }
   }
 }
-
 
 /*
 header {
