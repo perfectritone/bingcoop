@@ -42,7 +42,6 @@ describe "StaticPages" do
   describe "Recipes" do
     before { visit recipes_path }
     
-    it { should have_content('Binghamton Food Co-Op') }
     it { should have_selector('title', text: full_title('Recipes') ) }
   end
   
