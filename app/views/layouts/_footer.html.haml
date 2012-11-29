@@ -1,0 +1,8 @@
+%footer
+  -if signed_in?
+    =link_to "Log out", signout_path, method: "delete"
+    =current_user
+    =current_user.remember_token
+  -else 
+    =link_to "Log in", signin_path
+    
