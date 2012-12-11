@@ -1,1 +1,12 @@
-add a footer to the recipes page, to login or logout, depending on status. p. 357 or so.
+TODO
+
+Store in a session a hash of the last search options
+Clear this hash when the recipes_path is reached
+Automatically fill in the recipes form with the last search
+
+Allow a basic user to delete themself
+  this functionality/tests is currently commented out
+  
+Favorite Recipes
+
+Search by multiple ingredients

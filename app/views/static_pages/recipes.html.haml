@@ -1,7 +1,7 @@
 = provide(:title, 'Recipes')
 %h1
   = yield :title
-- if true #should check if user is signed in
+- unless signed_in? #should check if user is signed in
   %p
     Would you like to add your own recipes?
     = link_to "Log in here!", signin_path

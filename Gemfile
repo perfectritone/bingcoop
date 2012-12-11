@@ -4,6 +4,8 @@ gem 'rails', '3.2.3'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml-rails', '0.3.5'
 gem 'jquery-rails', '2.1.3'
+gem 'faker', '1.0.1'
+gem 'launchy', '2.1.2'
 
 group :development do
   gem 'sqlite3', '1.3.5'

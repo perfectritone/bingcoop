@@ -12,6 +12,11 @@
  *= require_tree .
 */
 
+.banner {
+  margin: 0 auto;
+  width: 1086px;
+}
+
 .signbox {
   margin: 0 auto;
   padding: 20px;
@@ -29,5 +34,3 @@
 .signbox .submit {
   margin-left: 7em;
 }
-}
-

@@ -1,6 +1,6 @@
-- provide(:title, "Sign in")
+- provide(:title, "Log in")
 %h1
-  Sign in
+  Log in
 #signinbox.signbox
   =form_for(:session, url: sessions_path) do |f|
   
@@ -12,7 +12,7 @@
       =f.label :password
       =f.password_field :password
     
-    =f.submit "Sign in"
+    =f.submit "Log in"
   
   %p
     Haven't signed up yet? <br>

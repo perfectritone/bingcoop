@@ -1,7 +1,7 @@
-= provide(:title, 'Sign Up')
-%h1 Sign up here!
+= provide(:title, 'Edit your information')
+%h1 Update Your Profile
 
-%div#signupbox.signbox
+%div#edit_box.signbox
   = form_for(@user) do |f| 
     = render 'shared/error_messages'
 
@@ -21,7 +21,4 @@
       = f.label :password_confirmation, "Confirmation"  
       = f.password_field :password_confirmation  
 
-    = f.submit "Create my account", class: "submit" 
-    %p
-      Already signed in?
-      = link_to "Log in", signin_path
+    = f.submit "Update my account", class: "submit" 

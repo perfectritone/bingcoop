@@ -71,4 +71,17 @@ describe User do
     its(:remember_token) { should_not be_blank } 
     # same as it { @user.remember_token.should_not be_blank }
   end
+  
+  
+  it { should respond_to(:admin) }
+  it { should respond_to(:authenticate) }
+  
+  it { should be_valid }
+  it { should_not be_admin }
+  
+  describe "with admin privileges" do
+    before { @user.toggle(:admin) }
+    
+    it { should be_admin }
+  end
 end
