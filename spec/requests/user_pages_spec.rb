@@ -65,7 +65,7 @@ describe "User Pages" do
       
       it { should have_selector('title', text: updated_name) }
       #it { flash[:success].should =~ /Profile updated/i }
-      it { save_and_open_page;should have_selector('div.alert.alert-success') }
+      it { should have_selector('div.alert.alert-success') }
       it { should have_link('Log out', href: signout_path) }
       specify { user.reload.name.should == updated_name }
       specify { user.reload.email.should == updated_email }
