@@ -3,6 +3,7 @@ class Recipe < ActiveRecord::Base
   # Do NOT include user_id in the attr_accessible method, to avoid
   # the possibility of it being changed externally.
   belongs_to :user
+  has_many :ingredients, dependent: :destroy
   
   validates :user_id, presence: true
   validates :name,  presence: true,
@@ -13,5 +14,8 @@ class Recipe < ActiveRecord::Base
   validates :diet, inclusion: { in: %w(vegan vegetarian omnivore) }
   validates :directions,  presence: true,
                           length: { maximum: 1024 }
+                          
+  validates_associated :ingredients
+                          
   default_scope order: "recipes.created_at DESC"
 end
