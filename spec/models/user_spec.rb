@@ -64,6 +64,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:recipes) }
   
   describe "remember token" do
     before { @user.save }
@@ -83,5 +84,42 @@ describe User do
     before { @user.toggle(:admin) }
     
     it { should be_admin }
+  end
+  
+  it { should respond_to(:recipes) }
+  
+  describe "recipe associations," do
+    
+    before { @user.save }
+    let!(:older_recipe) do
+      FactoryGirl.create(:recipe, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_recipe) do
+      FactoryGirl.create(:recipe, user: @user, created_at: 1.minute.ago)
+    end
+    
+    it "should know what user they belong to" do
+      older_recipe.user.should == @user
+    end
+    
+    it "all of the recipes should be in the db" do
+      Recipe.where("user_id = ?", @user.id).should == [newer_recipe, older_recipe]
+    end
+    
+    it "should be listed newest first" do
+      @user.reload
+      # THIS DOES NOT WORK, WHY? This works in development.
+      @user.recipes.should == [newer_recipe, older_recipe]
+    end
+    
+    it "should remove microposts belonging to a user when they are destroyed" do
+      recipes = @user.recipes
+      @user.destroy
+      recipes.each do |recipe|
+        lambda do
+          Recipe.find(recipe.id)
+        end.should raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
   end
 end

@@ -1,5 +1,7 @@
 = provide(:title, @user.name)
 #{@user.name}: #{@user.email}
+-@recipes.each do |recipe|
+  %p #{recipe.name}
 %br
 %br
 = link_to "Edit user", edit_user_path(@user.id)

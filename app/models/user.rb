@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
+  has_many :recipes, dependent: :destroy
+  
   has_secure_password
 
   before_save { self.email.downcase! }
@@ -10,8 +12,11 @@ class User < ActiveRecord::Base
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 6 }
+  validates :password,  length: { minimum: 6 },
+                        confirmation: true
   validates :password_confirmation, presence: true
+  
+  validates_associated :recipes
   
   private
     def create_remember_token
