@@ -3,38 +3,38 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('#about').hover(
+  $('#about_button').hover(
     -> 
-      $('#about ul').show()
+      $('#about_button ul').show()
     -> 
-      $('#about ul').hide()
+      $('#about_button ul').hide()
   )
 
-  $('#get_involved').hover(
+  $('#get_involved_button').hover(
     -> 
-      $('#get_involved ul').show()
+      $('#get_involved_button ul').show()
     -> 
-      $('#get_involved ul').hide()
+      $('#get_involved_button ul').hide()
   )
 
-  $('#products').hover(
+  $('#products_button').hover(
     -> 
-      $('#products ul').show()
+      $('#products_button ul').show()
     -> 
-      $('#products ul').hide()
+      $('#products_button ul').hide()
   )
 
-  $('#recipes').hover(
+  $('#recipes_button').hover(
     -> 
-      $('#recipes ul').show()
+      $('#recipes_button ul').show()
     -> 
-      $('#recipes ul').hide()
+      $('#recipes_button ul').hide()
   )
   
-  $('#resources').hover(
+  $('#resources_button').hover(
     -> 
-      $('#resources ul').show()
+      $('#resources_button ul').show()
     -> 
-      $('#resources ul').hide()
+      $('#resources_button ul').hide()
   )
 

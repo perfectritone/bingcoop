@@ -4,21 +4,21 @@
   .nav_container
     %nav
       %ul.top_nav
-        %li#about
+        %li#about_button
           = link_to "About Us", about_path
           %ul.sub_nav
             %li= link_to "Mission", about_path + "#mission"
             %li= link_to "History", about_path + "#history"
             %li= link_to "Know Your Food", about_path + "#know_your_food"
             %li= link_to "How We Run", about_path + "#how_we_run"
-        %li#get_involved
+        %li#get_involved_button
           = link_to "Get Involved", get_involved_path
           %ul.sub_nav
             %li= link_to "Memberships", get_involved_path + "#memberships"
             %li= link_to "Volunteer", get_involved_path + "#volunteer"
             %li= link_to "Events", get_involved_path + "#events"
             %li= link_to "Suggestions", get_involved_path + "#suggestions"
-        %li#products
+        %li#products_button
           = link_to "Products", products_path
           %ul.sub_nav
             %li= link_to "Bulk", products_path + "#bulk"
@@ -26,13 +26,13 @@
             %li= link_to "Dairy & Eggs", products_path + "#dairy_eggs"
             %li= link_to "Herbs", products_path + "#herbs"
             %li= link_to "Coffee", products_path + "#coffee"
-        %li#recipes
+        %li#recipes_button
           = link_to "Recipes", recipes_path
           %ul.sub_nav
             %li= link_to "Vegan", '#'
             %li= link_to "Vegetarian", '#'
             %li= link_to "Meat", '#'
-        %li#resources
+        %li#resources_button
           = link_to "Resources", resources_path
           %ul.sub_nav
             %li= link_to "Websites", resources_path + "#websites"

@@ -18,4 +18,16 @@ class Recipe < ActiveRecord::Base
   validates_associated :ingredients
                           
   default_scope order: "recipes.created_at DESC"
+  
+  def display_diet
+    self.diet.titleize
+  end
+  
+  def display_season
+    self.season.titleize + " Season"
+  end
+  
+  def display_dish_type
+    self.dish_type.titleize
+  end
 end
