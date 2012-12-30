@@ -1,22 +1,22 @@
 %h2.recipe_name
   =link_to recipe.name, recipe_path(recipe)
 .recipe_meta
-  =recipe.display_diet
-  %br
-  =recipe.display_season
-  %br
-  =recipe.display_dish_type
+  -unless recipe.diet.nil?
+    =recipe.display_diet
+    %br
+  -unless recipe.season.nil?
+    =recipe.display_season
+    %br
+  -unless recipe.dish_type.nil?
+    =recipe.display_dish_type
 .recipe_ingredients
   %h3
     Ingredients
-  -recipe.ingredients.each do |ingredient|
-    %p
-      -unless ingredient.amount.nil?
-        =ingredient.amount
-      -unless ingredient.unit.nil?
-        =ingredient.unit
-      -unless ingredient.preparation.nil?
-        =ingredient.preparation
-      =ingredient.name.pluralize
+  -if recipe.ingredients.any?
+    -recipe.ingredients.each do |ingredient|
+      %p
+        =ingredient.to_s
 .recipe_directions
+  %h3 Directions
   =recipe.directions
+.recipe_divider

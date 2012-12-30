@@ -25,10 +25,17 @@ namespace :db do
       dish_type: "breakfast", season: "any", diet: "vegetarian", directions:
       "First you grate the sweet potatoes. Then you throw em in a frying pan. Then you add the juice from half a lemon and throw in some extra sharp cheddar cheese (or any cheese, depending on what you have on hand.). Just keep on frying it up until its a nice golden brown. Eat up!"
       )
-    ingredient = recipe.ingredients.create(
-      name: "Ingredient 1", amount: "5", 
-      unit: "whole", preparation: "cut up"
+    recipe.ingredients.create(
+      name: "Sweet Potato", amount: "2", 
+      unit: "Large"
     )
+    recipe.ingredients.create(
+      name: "Lemon", amount: "1/2"
+    )
+    recipe.ingredients.create(
+      name: "Extra Sharp Cheddar Cheese", amount: "A Handful"
+    )
+      
   end
 end
 

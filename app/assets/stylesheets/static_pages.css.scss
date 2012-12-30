@@ -2,76 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
-  font-family: "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
-  color: #333333;
-  background-color: #FFEDF4;
-}
-
-body {
-  font-size: 100%;
-}
-
-.container {
-  padding-top: 0;
-}
-
-.content {
-  padding: 0 10em;
-}
-
-h1 {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-h2 {
-  text-decoration: underline;
-}
-
-.nav_container {
-
-    ul.top_nav {
-      position: absolute;
-      left: 50%;
-      width: 60.8em;
-      margin-left: -30em;
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        width: 10em;
-        float: left;
-        margin: 0;
-        background-color: #999;
-        border: 1px solid #ccc;
-        text-align: center;
-        
-        ul.sub_nav {
-          list-style-type: none;
-          padding-left: 0;
-          
-          li {
-            float: none;
-            text-align: left;
-            font-size: .9em;
-            width: 9em;
-            
-            a {
-              padding-left: 1em;
-           }
-          }
-        }
-
-        a {
-          text-decoration: none;
-          &:link { color: #FFFFFF; }
-          &:visited { color: #FFFFFF; }
-        }
-      }
-    }
-}
 
 /*
 header {
@@ -112,15 +42,6 @@ header {
 }
 */
 
-div.container {
-  clear: both;
-  letter-spacing: 1px;
-  
-  h1 {
-    padding-top: 10px;
-    text-align: center;
-  }
-}
 
 .sub_nav {
   display: none;

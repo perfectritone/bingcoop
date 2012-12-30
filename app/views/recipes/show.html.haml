@@ -1,9 +1,7 @@
-= provide(:title, @recipe.name)
+=provide(:title, @recipe.name)
 
-=render 'sessions_bar'
-  
-=render 'recipes_side_bar'
+%h1
+  = yield :title
+
 #recipes
-  =render 'recipe', recipe: @recipe
--# =render 'layouts/footer'
-
+  =render partial: 'recipe', collection: [@recipe]

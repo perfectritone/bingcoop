@@ -1,14 +1,7 @@
 = provide(:title, 'Recipes')
 
-=render 'sessions_bar'
-
-=render 'recipes_side_bar'
-
 %h1
   = yield :title
 
 #recipes
-  -@recipes.each do |recipe|
-    =render 'recipe', recipe: recipe
--# =render 'layouts/footer'
-
+  =render partial: 'recipe', collection: @recipes

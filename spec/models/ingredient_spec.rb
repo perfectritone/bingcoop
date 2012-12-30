@@ -7,7 +7,7 @@ describe Ingredient do
   before do
     @ingredient = recipe.ingredients.build(
       name: "Ingredient 1", amount: "5", 
-      unit: "whole", preparation: "cut up"
+      unit: "whole"
     )
   end
   
@@ -16,9 +16,7 @@ describe Ingredient do
   it { should respond_to(:name) }
   it { should respond_to(:amount) }
   it { should respond_to(:unit) }
-  it { should respond_to(:preparation) }
-  # Why does the ingredient respond, but not allow change, as in above
-  #it { should_not respond_to(:recipe_id=) } 
+  it { should respond_to(:id) }
   
   it { should be_valid }
   
@@ -27,11 +25,30 @@ describe Ingredient do
     it { should_not be_valid }
   end
   
+  describe "when the mass assignment is attempted" do
+    it "for recipe_id" do
+      expect do
+        Ingredient.new name: "Flour", amount: "2", recipe_id: 1
+      end.to raise_error
+    end
+  end
+  
+  describe "id is changed" do
+  before { @ingredient.save }
+  let(:original_id) { @ingredient.id }
+  before do
+    @ingredient.id = @ingredient.id + 1
+    @ingredient.save
+  end
+  its(:id) { should == original_id }
+  end
+        
+  
   describe "accessible attributes" do
     it "should not allow access to recipe_id" do
       expect do
         Recipe.new(recipe_id: recipe.id)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+      end.to raise_error
     end
   end
 end

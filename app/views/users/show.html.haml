@@ -1,8 +1,11 @@
 = provide(:title, @user.name)
 #{@user.name}: #{@user.email}
 -@recipes.each do |recipe|
-  %p #{recipe.name}
+  %p 
+    =link_to recipe.name, recipe_path(recipe)
 %br
+%br
+=link_to "Add a recipe", new_recipe_path
 %br
 = link_to "Edit user", edit_user_path(@user.id)
 %br

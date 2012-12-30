@@ -11,26 +11,3 @@
  *= require_self
  *= require_tree .
 */
-
-.banner {
-  margin: 0 auto;
-  width: 1086px;
-}
-
-.signbox {
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px black solid;
-  width: 400px;
-}
-
-.signbox label {
-  width: 7em;
-  text-align: right;
-  margin-right: 0.5em;
-  float: left;
-}
-
-.signbox .submit {
-  margin-left: 7em;
-}

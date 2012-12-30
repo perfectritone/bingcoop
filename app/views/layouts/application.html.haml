@@ -11,6 +11,14 @@
     %br
     %br
     = render 'layouts/flash_messages'
-    .container
-      = yield
+    #outside
+      #sessions_bar
+        =yield(:sessions_bar) if content_for?(:sessions_bar)
+      #left_box.side_box
+        =yield(:left_box) if content_for?(:left_box)
+      #center_box
+        =content_for?(:recipes) ? yield(:recipes) : yield
+      #right_box.side_box
+        =yield(:right_box) if content_for?(:right_box)
+
     -#= debug(params) if Rails.env.development?

@@ -21,7 +21,7 @@ describe Recipe do
   it { should respond_to(:directions) }
   
   it { should respond_to(:user) }
-  its(:user) { should == user }
+  its(:user) { should == user }  
   
   it { should be_valid }
   
@@ -61,7 +61,7 @@ describe Recipe do
   end
   
   describe "when the directions are too long" do
-    before { @recipe.directions = "a" * 1025 }
+    before { @recipe.directions = "a" * 8193 }
     it { should_not be_valid }
   end
   
@@ -71,5 +71,9 @@ describe Recipe do
         Recipe.new(user_id: user.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end
+  end
+  
+  describe "when accessing the display method" do
+    its(:display_diet) { should == "Vegetarian" }
   end
 end

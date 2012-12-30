@@ -1,0 +1,115 @@
+ 
+html {
+  font-family: "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
+  color: #333333;
+  background-color: #FFEDF4;
+}
+
+body {
+  font-size: 100%;
+  padding-bottom: 0;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+.nav_container {
+
+    ul.top_nav {
+      position: absolute;
+      left: 50%;
+      width: 60.8em;
+      margin-left: -30em;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        width: 10em;
+        float: left;
+        margin: 0;
+        background-color: #999;
+        border: 1px solid #ccc;
+        text-align: center;
+        
+        ul.sub_nav {
+          list-style-type: none;
+          padding-left: 0;
+          
+          li {
+            float: none;
+            text-align: left;
+            font-size: .9em;
+            width: 9em;
+            
+            a {
+              padding-left: 1em;
+           }
+          }
+        }
+
+        a {
+          text-decoration: none;
+          &:link { color: #FFFFFF; }
+          &:visited { color: #FFFFFF; }
+        }
+      }
+    }
+}
+
+#outside { 
+}
+
+.side_box {
+  background-color: pink;
+  margin-top: 32px;
+  float: left;
+  width: 15%;
+}
+
+#left_box {
+}
+
+#center_box {
+  float: left;
+  width: 70%;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#right_box {
+}
+
+.content {
+  /*padding: 0 10em;*/
+}
+
+
+.banner {
+  margin: 0 auto;
+  width: 1086px;
+}
+
+.signbox {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px black solid;
+  width: 400px;
+}
+
+.signbox label {
+  width: 7em;
+  text-align: right;
+  margin-right: 0.5em;
+  float: left;
+}
+
+.signbox .submit {
+  margin-left: 7em;
+}

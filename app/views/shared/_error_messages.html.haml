@@ -1,8 +1,8 @@
-- if @user.errors.any?
+-if form_var.errors.any?
   .error_explanation
     This form contains 
-    = pluralize(@user.errors.count, "error")
+    =pluralize(form_var.errors.count, "error")
     %ul
-      - @user.errors.full_messages.each do |msg|
+      -form_var.errors.full_messages.each do |msg|
         %li
-          = msg
+          =msg

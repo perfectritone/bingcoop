@@ -1,4 +1,4 @@
-#sessions_bar
+#login_bar
   -unless signed_in?
     =form_for(:session, url: sessions_path) do |f|
       =f.label :email, "E-mail:"
@@ -9,7 +9,7 @@
       
       =f.submit "Log in"
     #sign_up_in_bar
-      =link_to "Sign up", signup_path
-      here if you aren't registered yet.
+      =link_to "Sign up here", signup_path
+      if you aren't registered yet.
   -else
     = link_to "Log out", signout_path, method: :delete

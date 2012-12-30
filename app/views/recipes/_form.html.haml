@@ -1,0 +1,32 @@
+=form_for @recipe do |f|
+  -#=render 'shared/error_messages', form_var: f.object
+  
+  %p
+    =f.label :name
+    =f.text_field :name
+    
+  %p
+    =f.label :diet
+    =f.select :diet, Recipe::DIETS.to_a
+
+  %p
+    =f.label :dish_type
+    =f.select :dish_type, Recipe::DISH_TYPES.to_a
+  
+  %p
+    =f.label :season
+    =f.select :season, Recipe::SEASONS.to_a
+    
+  %b Ingredients
+    
+  =f.fields_for :ingredients do |builder|
+    =render 'ingredient_fields', f: builder
+  %p
+    =link_to_add_fields "Add Ingredient", f, :ingredients
+    
+  %p
+    =f.label :directions
+    =f.text_area  :directions
+  
+  %p
+  = f.submit "Add your recipe", class: "submit" 
