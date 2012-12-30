@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.9'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml-rails', '0.3.5'
 gem 'jquery-rails', '2.1.3'
@@ -11,6 +11,7 @@ group :development do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
+  gem 'brakeman', '1.9.0'
 end
 
 group :test do

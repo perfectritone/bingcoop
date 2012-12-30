@@ -64,13 +64,15 @@ h2 {
 }
 
 #outside { 
+
 }
 
 .side_box {
-  background-color: pink;
   margin-top: 32px;
+  padding: 1em 0 1em .5em;
   float: left;
-  width: 15%;
+  width: 14%;
+  overflow: hidden;
 }
 
 #left_box {
@@ -84,6 +86,16 @@ h2 {
 }
 
 #right_box {
+  dl {
+    margin-top: 0;
+    dt {
+      display: inline;
+    }
+  }
+}
+
+.top_box {
+  background-color: white;
 }
 
 .content {

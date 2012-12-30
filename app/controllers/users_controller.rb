@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if (@user.save)
       sign_in @user
       flash[:success] = "Welcome to the Coop! Thanks for joining"
-      redirect_to @user
+      redirect_to user_path @user
     else
       render 'new'
     end

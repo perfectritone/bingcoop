@@ -7,7 +7,18 @@
   %h3 Kick up your feet and see what comes your way!
 
 -content_for :left_box do
-  home page left box
+  #hours.top_box
+    %b CLOSED <br>
+    We are currently closed until the next semester.
+    <br><br>
+    %b Regular hours<br>
+    Monday-Friday 10a-4p
 
 -content_for :right_box do
-  home page right box
+  #event_calendar.top_box
+    %dl
+      %b Event Calendar<br>
+    %dt
+      January 28th, 2013
+    %dd
+      Opening back up

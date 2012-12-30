@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     @new_recipe = current_user.recipes.build(params[:recipe])
     if @new_recipe.save
       flash[:success] = "You've successfully added #{@new_recipe.name}!"
-      redirect_to @new_recipe
+      redirect_to recipe_path @new_recipe
     else
       redirect_to 'new'
     end
