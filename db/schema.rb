@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121231062246) do
+ActiveRecord::Schema.define(:version => 20121231031146) do
 
   create_table "ingredients", :force => true do |t|
     t.integer  "recipe_id"
