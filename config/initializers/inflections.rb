@@ -73,5 +73,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular('foot', 'feet')
   inflect.irregular('move', 'moves')
 
-  inflect.uncountable(%w(equipment information rice money species series deer fish sheep jeans police pants))
+  inflect.uncountable(%w(equipment information money species series jeans police pants status advice))
+  #foods
+  inflect.uncountable(%w(rice deer fish chicken lamb liver sheep milk moose grass bread advice spaghetti coffee juice oil tea soup water butter cheese flour food fruit rice honey meat parsley toast sugar salt beer wine cream blood powder corn wheat))
 end
