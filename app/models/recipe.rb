@@ -1,10 +1,10 @@
 class Recipe < ActiveRecord::Base
 
-  DISH_TYPES={""=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Desert"=>"desert"}
+  DISH_TYPES={""=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert"}
   SEASONS={"Any Season"=>"any", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
   DIETS={""=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Omnivore"=>"omnivore"}
   
-  DISH_TYPES_R={""=>"", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "desert"=>"Desert"}
+  DISH_TYPES_R={""=>"", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert"}
   SEASONS_R={"any"=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
   DIETS_R={""=>"", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "omnivore"=>"Omnivore"}
 
