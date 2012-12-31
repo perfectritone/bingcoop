@@ -22,17 +22,11 @@ class Ingredient < ActiveRecord::Base
       end
     else
       if self.unit.present?
-        return "#{self.unit} #{name}"
+        return "#{self.unit} #{self.name}"
       else
-        return name
+        return self.name
       end
     end      
   end
   
 end
-
-=begin
- 5 oz lemon peel
- 1 whole carrot
- lemon
-=end
