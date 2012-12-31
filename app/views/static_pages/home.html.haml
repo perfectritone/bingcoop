@@ -7,17 +7,12 @@
   %h3 Kick up your feet and see what comes your way!
 
 -content_for :left_box do
-  #hours.top_box
-    %b CLOSED <br>
-    We are currently closed until the next semester.
-    <br><br>
-    %b Regular hours<br>
-    Monday-Friday 10a-4p
+  =render 'shared/hours_box'
 
 -content_for :right_box do
   #event_calendar.top_box
     %dl
-      %b Event Calendar<br>
+      Event Calendar<br>
     %dt
       January 28th, 2013
     %dd

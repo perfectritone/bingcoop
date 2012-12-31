@@ -45,7 +45,7 @@ describe "Recipe Pages" do
     end
   end
   
-  describe "show pages"
+  describe "show pages" do
     
     let!(:recipe) { FactoryGirl.create(:recipe, user: user) }
     let!(:ingredient_1) do
@@ -78,4 +78,15 @@ describe "Recipe Pages" do
     it { should have_content("4 ounces Pepper") }
     it { should have_content("1 Whole Lemon") }
     it { should have_content("1/2 Grape") }
+    
+    describe "description" do
+      before do
+        recipe.directions = "ok\r\nthen"
+        recipe.save
+        visit recipes_path recipe
+      end
+      
+      it { should have_selector("div.recipe_directions", text: "ok\nthen") }
+    end
+  end
 end

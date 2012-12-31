@@ -1,4 +1,14 @@
 %p.fields
-  =f.label :name, "Ingredient Name"
-  =f.text_field :name
+  %p
+    =f.label :name, "Ingredient Name"
+    =f.text_field :name
+  
+  %p
+    =f.label :amount, "Amount"
+    =f.text_field :amount
+  
+  %p
+    =f.label :unit, "Unit"
+    =f.text_field :unit
+  
   =link_to_remove_fields "x", f

@@ -55,12 +55,18 @@ h2 {
         }
 
         a {
+          display: block;
           text-decoration: none;
           &:link { color: #FFFFFF; }
           &:visited { color: #FFFFFF; }
         }
       }
     }
+}
+
+.alert {
+  text-align: center;
+  font-weight: strong;
 }
 
 #outside { 
@@ -87,6 +93,7 @@ h2 {
 
 #right_box {
   dl {
+    font-weight: strong;
     margin-top: 0;
     dt {
       display: inline;
@@ -112,14 +119,19 @@ h2 {
   margin: 0 auto;
   padding: 20px;
   border: 1px black solid;
-  width: 400px;
+  width: 45%;
+  text-align: left;
 }
 
 .signbox label {
-  width: 7em;
+  width: 9em;
   text-align: right;
-  margin-right: 0.5em;
+  margin-right: .5em;
   float: left;
+}
+
+.remove_ingredient {
+  text-align: right;
 }
 
 .signbox .submit {

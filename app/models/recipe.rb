@@ -42,9 +42,6 @@ class Recipe < ActiveRecord::Base
         
   default_scope order: "recipes.created_at DESC"
 
-  #[:diet, :season, :dish_type].each do |method| 
-  
-
   def method_missing (method)
     method = method.to_s
     if method.slice!("display_")

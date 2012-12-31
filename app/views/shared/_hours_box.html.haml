@@ -1,0 +1,10 @@
+#hours.top_box
+  -status = store_status
+  %b 
+    =status[:status]
+  -unless status[:message].nil?
+    <br>
+    =status[:message]
+  <br><br>
+  %b Regular hours<br>
+  Monday-Friday 10a-4p

@@ -32,5 +32,5 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id].to_i)
   end
-    
+  
 end
