@@ -92,17 +92,16 @@ h2 {
 }
 
 #right_box {
-  dl {
-    font-weight: bold;
-    margin-top: 0;
-    dt {
-      display: inline;
-    }
-  }
 }
 
 .top_box {
   background-color: white;
+  h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
 }
 
 .content {
@@ -136,4 +135,12 @@ h2 {
 
 .signbox .submit {
   margin-left: 7em;
+}
+
+#status {
+  font-weight: bold;
+}
+
+.event_description {
+  margin-left: 1.5em;
 }
