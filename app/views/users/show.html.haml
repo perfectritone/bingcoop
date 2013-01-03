@@ -4,9 +4,10 @@
   %p 
     =link_to recipe.name, recipe_path(recipe)
 %br
-%br
-=link_to "Add a recipe", new_recipe_path
-%br
-= link_to "Edit user", edit_user_path(@user.id)
-%br
-= link_to "Log out", signout_path, method: :delete
+-if current_user? @user
+  %br
+  =link_to "Add a recipe", new_recipe_path
+  %br
+  =link_to "Edit user", edit_user_path(@user.id)
+  %br
+  = link_to "Log out", signout_path, method: :delete

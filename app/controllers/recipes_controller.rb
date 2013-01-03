@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :edit, :destroy]
+  before_filter :signed_in_user, only: [:create, :edit, :update, :destroy]
+  before_filter :correct_user, only: [:edit, :update]
 
   def index
     @recipes = Recipe.all
@@ -26,11 +27,26 @@ class RecipesController < ApplicationController
   end
   
   def edit
-    @recipe = Recipe.find(params[:id])
+  end
+  
+  def update
+    if @recipe.update_attributes(params[:recipe])
+      flash[:success] = "Recipe updated!"
+      redirect_to @recipe
+    else
+      render 'edit'
+    end
   end
   
   def show
     @recipe = Recipe.find(params[:id].to_i)
   end
-  
+
+  private
+    
+    def correct_user
+      @recipe = Recipe.find(params[:id])
+      redirect_to(recipes_path) unless current_user? @recipe.user
+    end
+    
 end

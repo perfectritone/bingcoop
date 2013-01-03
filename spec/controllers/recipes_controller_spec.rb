@@ -6,13 +6,15 @@ describe RecipesController do
   
   let(:recipe) {  
     {
-      name: "Schwartzen Peter",
+      name: "Schwarzen Peter",
       dish_type: "",
       diet: "",
       season: "winter",
       directions: "A lot of work!"
     }
   }
+  
+  let(:saved_recipe) { user.recipes.create!(recipe) }
   
   describe "GET #new" do
     before do
@@ -27,7 +29,7 @@ describe RecipesController do
     end
   end
   
-  describe "POST create" do
+  describe "POST #create" do
     before { post :create, recipe: recipe }
     
     it "assigns something from the POSTed parameters" do
@@ -100,6 +102,62 @@ describe RecipesController do
           assert false, "No Ingredients in the DB"
         end
       end
+    end
+  end
+  
+  describe "GET #edit" do
+    context "the parent user is signed in" do
+      before { visit edit_recipe_path saved_recipe.id }
+      
+      it "renders the :new template" do
+        response.should render_template :edit
+      end
+      it "stays on the page, no redirect" do
+        page.current_path.should == edit_recipe_path(saved_recipe.id)
+      end
+    end
+    
+    context "the signed in user is not the parent of the recipe" do
+      let(:other_user) { FactoryGirl.create(:user) }
+      before do
+        sign_out
+        sign_in other_user
+        visit edit_recipe_path saved_recipe
+      end
+      
+      #it { response.should redirect_to recipes_path (saved_recipe) }
+      it { page.current_path.should == recipes_path }
+    end
+    
+    context "the user has not signed in" do
+      before do
+        sign_out
+        visit edit_recipe_path saved_recipe
+      end
+      
+      #it { response.should redirect_to signin_path }
+      it { current_path.should == signin_path }
+    end
+  end
+
+  describe "PUT #update" do
+    before do
+      @attr = { name: "Black Pete" }
+      #page.driver.put("/recipes/#{saved_recipe.id}", 
+        #{ params: { recipe: { name: "Black Pete" } } } )
+      put :update, id: saved_recipe.id, recipe: @attr
+      saved_recipe.reload
+    end
+    
+    # STOP USING RESPONSE, or anything like that. Try to stick strictly
+    # to Capybara for all requests.
+    it { page.driver.status_code.should == 200 } 
+    
+    it "updates the model to the new name" do
+      Recipe.find(saved_recipe.id).name.should == "Black Pete"
+    end
+    it "other attributes remain the same" do
+      saved_recipe.season.should == "winter"
     end
   end
 end

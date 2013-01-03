@@ -1,8 +1,7 @@
-=provide :title, "Edit your Recipe"
+-provide :title, "Edit your Recipe"
 
 %h1 
-  =title
+  =yield :title
 
 #edit_recipe_box.signbox
   =render 'form'
-

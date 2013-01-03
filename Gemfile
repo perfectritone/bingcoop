@@ -9,13 +9,13 @@ gem 'launchy', '2.1.2'
 
 group :development do
   gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
   gem 'brakeman', '1.9.0'
+  gem "nifty-generators"
 end
 
 group :test do
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails', '2.12.0'
   gem 'capybara', '1.1.2'
   gem 'rb-inotify', '0.8.8'
   gem 'libnotify', '0.5.9'

@@ -1,5 +1,10 @@
 %h2.recipe_name
   =link_to recipe.name, recipe_path(recipe)
+-if parent_of_recipe? recipe.id
+  .edit_recipe
+    =link_to "Edit this recipe", edit_recipe_path(recipe)
+    %br
+    %br
 .recipe_meta
   -unless recipe.diet.nil?
     =recipe.display_diet

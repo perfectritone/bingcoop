@@ -12,4 +12,6 @@
       =link_to "Sign up here", signup_path
       if you aren't registered yet.
   -else
-    = link_to "Log out", signout_path, method: :delete
+    =link_to "My Profile", user_path(current_user)
+    |
+    =link_to "Log out", signout_path, method: :delete

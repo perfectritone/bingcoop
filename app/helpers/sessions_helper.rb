@@ -32,6 +32,11 @@ module SessionsHelper
       redirect_to signin_path, notice: "Please sign in."
     end
   end
+  
+  def parent_of_recipe?(recipe_id)
+    recipe = Recipe.find(recipe_id)
+    current_user? recipe.user
+  end
 
   def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
