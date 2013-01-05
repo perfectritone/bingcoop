@@ -78,7 +78,6 @@ h2 {
   padding: 1em 0 1em .5em;
   float: left;
   width: 14%;
-  overflow: hidden;
 }
 
 #left_box {
@@ -96,6 +95,7 @@ h2 {
 
 .top_box {
   background-color: white;
+  padding: .6em;
   h4 {
     margin: 0;
     padding: 0;

@@ -2,13 +2,15 @@ class RecipesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit, :update, :destroy]
   before_filter :correct_user, only: [:edit, :update]
 
-  def index
+  def index_old
     @recipes = Recipe.search(params)
+    render 'index'
   end
   
-  def index_scoped
-    @recipes = Recipe.with_dish_type(params[:dish_type]).with_diet(params[:diet]).with_season(params[:season])
-    render 'index'
+  def index
+    check_stored_queries
+    @recipes = Recipe.with_dish_type(session[:search][:dish_type]).with_diet(session[:search][:diet]).with_season(session[:search][:season])
+    #render 'index'
   end
   
   def new
@@ -52,6 +54,19 @@ class RecipesController < ApplicationController
     def correct_user
       @recipe = Recipe.find(params[:id])
       redirect_to(recipes_path) unless current_user? @recipe.user
+    end
+    
+    def check_stored_queries
+      if session[:search].blank? || params.has_key?(:reset)
+        session[:search] = Hash.new 
+        Recipe::SEARCH_OPTIONS.each do |option|
+          session[:search][option] = ''
+        end
+      end      
+      params.slice(*Recipe::SEARCH_OPTIONS).each do |option, value|
+        option = option.to_sym
+        session[:search][option] = params[option]
+      end
     end
     
 end

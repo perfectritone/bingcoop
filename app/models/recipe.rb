@@ -15,13 +15,13 @@
 
 class Recipe < ActiveRecord::Base
 
-  DISH_TYPES={""=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert"}
-  SEASONS={"Any Season"=>"any", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
-  DIETS={""=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Omnivore"=>"omnivore"}
+  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert"}
+  SEASONS={"Any Season"=>"", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
+  DIETS={"Any Diet"=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Omnivore"=>"omnivore"}
   
-  DISH_TYPES_R={""=>"", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert"}
-  SEASONS_R={"any"=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
-  DIETS_R={""=>"", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "omnivore"=>"Omnivore"}
+  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert"}
+  SEASONS_R={""=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
+  DIETS_R={""=>"Any Diet", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "omnivore"=>"Omnivore"}
 
   attr_protected :user_id
   # Do NOT include user_id in the attr_accessible method, to avoid
@@ -71,10 +71,37 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+
   scope :with_dish_type, lambda {|dish_type| dish_type.present? ? { conditions: {dish_type: dish_type} } : {} }
   scope :with_diet, lambda {|diet| diet.present? ? { conditions: {diet: diet} } : {} }
   scope :with_season, lambda {|season| season.present? ? { conditions: {season: season} } : {} }
 
+=begin
+  scope :with_dish_type, (lambda do |dish_type|
+    if dish_type.present?
+      { conditions: {dish_type: dish_type} } 
+    elsif session[:search].present? && session[:search][:dish_type].present?
+      { conditions: {dish_type: session[:search][:dish_type] } }
+    else {}
+    end
+  end)
+  scope :with_season, (lambda do |season|
+    if season.present?
+      { conditions: {season: season} } 
+    elsif session[:search][:season].present?
+      { conditions: {season: session[:search][:season] } }
+    else {}
+    end
+  end)
+  scope :with_diet, (lambda do |diet|
+    if diet.present?
+      { conditions: {diet: diet} } 
+    elsif session[:search][:diet].present?
+      { conditions: {diet: session[:search][:diet] } }
+    else {}
+    end
+  end)
+=end
 
   def self.search (search_params)
     if search_params.respond_to? :slice # ensure it quacks like a hash

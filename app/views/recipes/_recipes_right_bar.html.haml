@@ -1,0 +1,26 @@
+.top_box#search_box
+  Recipes in Action <br>
+  <br>
+  Want to find a certain kind of recipe?<br>
+  <br>
+  Diet:
+  .queries
+    -Recipe::DIETS.each do |option_display_format, option_link_format|
+      =link_to option_display_format, "#{recipes_path}?diet=#{option_link_format}"
+      <br>
+
+  Season: <br>
+  .queries
+    -Recipe::SEASONS.each do |option_display_format, option_link_format|
+      =link_to option_display_format, "#{recipes_path}?season=#{option_link_format}"
+      <br>
+
+
+  Dish Type: <br>
+  .queries
+    -Recipe::DISH_TYPES.each do |option_display_format, option_link_format|
+      =link_to option_display_format, "#{recipes_path}?dish_type=#{option_link_format}"
+      <br>
+  <br>
+  .queries
+    =link_to "Reset", "#{recipes_path}?reset"
