@@ -1,0 +1,17 @@
+require 'test_helper'
+require 'rails/performance_test_help'
+ 
+class RecipeSearchPerformanceTest < ActionDispatch::PerformanceTest
+  def setup
+    # Application requires logged-in user
+    login_as(:lifo)
+  end
+  
+  def test_scope_search
+    get '/recipes/veg'
+  end
+  
+  def test_search
+    get '/recipes/vegetarian'
+  end
+end

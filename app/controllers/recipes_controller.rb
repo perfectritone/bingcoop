@@ -3,7 +3,12 @@ class RecipesController < ApplicationController
   before_filter :correct_user, only: [:edit, :update]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.search(params)
+  end
+  
+  def index_scoped
+    @recipes = Recipe.with_dish_type(params[:dish_type]).with_diet(params[:diet]).with_season(params[:season])
+    render 'index'
   end
   
   def new

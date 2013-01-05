@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: recipes
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  dish_type  :string(255)
+#  season     :string(255)
+#  diet       :string(255)
+#  directions :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+
 class Recipe < ActiveRecord::Base
 
   DISH_TYPES={""=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert"}
@@ -56,8 +71,50 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+  scope :with_dish_type, lambda {|dish_type| dish_type.present? ? { conditions: {dish_type: dish_type} } : {} }
+  scope :with_diet, lambda {|diet| diet.present? ? { conditions: {diet: diet} } : {} }
+  scope :with_season, lambda {|season| season.present? ? { conditions: {season: season} } : {} }
+
+
+  def self.search (search_params)
+    if search_params.respond_to? :slice # ensure it quacks like a hash
+      unique_search_params = search_params.slice *UNIQUE_SEARCH_OPTIONS
+      basic_search_params = search_params.slice *SEARCH_OPTIONS
+      
+      Recipe.where( basic_search_params )
+    end
+    #conditions_clauses = search_params.map do |param, value|
+    #  send "#{param}_conditions", value
+    #end
+    #conditions = conditions_clauses.join(' AND ')
+    #Recipe.find(:all, :conditions => conditions)
+  end
+
   private
   
     STRING_ATTRIBUTES = [:dish_type, :season, :diet]
-    
+      
+    SEARCH_OPTIONS = [:diet, :dish_type, :season]
+    UNIQUE_SEARCH_OPTIONS = [:name, :keyword, :ingredients]
+
+
+    def self.diet_conditions diet
+      ["recipes.diet LIKE ?", "#{diet}"] unless diet.blank?
+    end
+=begin
+    def conditions
+      [conditions_clauses.join(' AND '), *conditions_options]
+    end
+
+    def conditions_clauses
+      conditions_parts.map { |condition| condition.first }
+    end
+
+    def conditions_options
+      conditions_parts.map { |condition| condition[1..-1] }.flatten
+    end
+
+    def conditions_parts
+      private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+=end
 end

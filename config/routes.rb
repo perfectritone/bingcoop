@@ -1,4 +1,10 @@
 Coop::Application.routes.draw do
+
+  match '/recipes/vegetarian', to: "recipes#index", diet: "vegetarian"
+  match '/recipes/vegan', to: "recipes#index", diet: "vegan"
+  match '/recipes/meat', to: "recipes#index", diet: "meat"
+  match '/recipes/veg', to: "recipes#index_scoped", diet: "vegetarian"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :recipes
@@ -15,7 +21,7 @@ Coop::Application.routes.draw do
   match '/personal_orders', to: 'static_pages#personal_orders'
   match '/resources', to: 'static_pages#resources'
   match '/contact', to: 'static_pages#contact'
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

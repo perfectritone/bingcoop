@@ -34,8 +34,10 @@ module SessionsHelper
   end
   
   def parent_of_recipe?(recipe_id)
-    recipe = Recipe.find(recipe_id)
-    current_user? recipe.user
+    if signed_in?
+      recipe = Recipe.find(recipe_id)
+      current_user? recipe.user
+    end
   end
 
   def redirect_back_or(default)

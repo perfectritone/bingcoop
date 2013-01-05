@@ -118,10 +118,11 @@ describe "Recipe Pages" do
       
       context "for a visitor that is not signed in" do
         before do
+          sign_out
           visit recipes_path '1'
         end
         
-        it { should have_no_selector('div.edit_recipe') }
+        it { should_not have_selector('div.edit_recipe') }
       end
     end
   end

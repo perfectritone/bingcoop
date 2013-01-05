@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.10'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml-rails', '0.3.5'
 gem 'jquery-rails', '2.1.3'
@@ -11,7 +11,8 @@ group :development do
   gem 'sqlite3', '1.3.5'
   gem 'guard-rspec', '0.5.5'
   gem 'brakeman', '1.9.0'
-  gem "nifty-generators"
+  #gem "nifty-generators"
+  gem "annotate"
 end
 
 group :test do
@@ -22,6 +23,8 @@ group :test do
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails', '1.4.0'
+  gem 'test-unit'
+  gem 'ruby-prof'
 end
 
 group :production do
@@ -34,3 +37,5 @@ group :assets do
   gem 'haml', '3.1.7'
   gem 'uglifier', '>= 1.0.3'
 end
+
+#gem "mocha", :group => :test
