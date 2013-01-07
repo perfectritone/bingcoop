@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Reseting database"
-rake db:restart
-rake db:test:restart
+rake db:reset
+rake db:test:prepare

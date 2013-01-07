@@ -15,13 +15,13 @@
 
 class Recipe < ActiveRecord::Base
 
-  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert"}
+  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert", "Juice"=>"juice"}
   SEASONS={"Any Season"=>"", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
-  DIETS={"Any Diet"=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Omnivore"=>"omnivore"}
+  DIETS={"Any Diet"=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Meat"=>"meat"}
   
-  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert"}
+  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert", "juice"=>"Juice"}
   SEASONS_R={""=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
-  DIETS_R={""=>"Any Diet", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "omnivore"=>"Omnivore"}
+  DIETS_R={""=>"Any Diet", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "meat"=>"Meat"}
 
   attr_protected :user_id
   # Do NOT include user_id in the attr_accessible method, to avoid
@@ -75,6 +75,8 @@ class Recipe < ActiveRecord::Base
   scope :with_dish_type, lambda {|dish_type| dish_type.present? ? { conditions: {dish_type: dish_type} } : {} }
   scope :with_diet, lambda {|diet| diet.present? ? { conditions: {diet: diet} } : {} }
   scope :with_season, lambda {|season| season.present? ? { conditions: {season: season} } : {} }
+  scope :with_gluten_free, lambda {|gf| gf.present? ? { conditions: {gluten_free: (gf == "true") } } : {} }
+  scope :with_raw, lambda {|raw| raw.present? ? { conditions: {raw: (raw == "true") } } : {} }
 
 =begin
   scope :with_dish_type, (lambda do |dish_type|
@@ -121,7 +123,7 @@ class Recipe < ActiveRecord::Base
   
     STRING_ATTRIBUTES = [:dish_type, :season, :diet]
       
-    SEARCH_OPTIONS = [:diet, :dish_type, :season]
+    SEARCH_OPTIONS = [:diet, :dish_type, :season, :gluten_free, :raw]
     UNIQUE_SEARCH_OPTIONS = [:name, :keyword, :ingredients]
 
 

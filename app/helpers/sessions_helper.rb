@@ -3,6 +3,12 @@ module SessionsHelper
   def sign_in(user)
     cookies.permanent[:remember_token] = user.remember_token
     self.current_user = user
+    unless session.has_key?(:search)
+      session[:search] = Hash.new 
+      Recipe::SEARCH_OPTIONS.each do |option|
+        session[:search][option] = ''
+      end
+    end
   end
   
   def sign_out
@@ -47,5 +53,13 @@ module SessionsHelper
 
   def store_location
     session[:return_to] = request.url
+  end
+  
+  def raw?
+    (session[:search][:raw] == 'false')
+  end
+  
+  def gluten_free?
+    (session[:search][:gluten_free] == 'false')
   end
 end

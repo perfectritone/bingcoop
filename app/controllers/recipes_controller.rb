@@ -9,7 +9,12 @@ class RecipesController < ApplicationController
   
   def index
     check_stored_queries
-    @recipes = Recipe.with_dish_type(session[:search][:dish_type]).with_diet(session[:search][:diet]).with_season(session[:search][:season])
+    @recipes = Recipe.with_dish_type(session[:search][:dish_type]).
+                      with_diet(session[:search][:diet]).
+                      with_season(session[:search][:season]).
+                      with_gluten_free(session[:search][:gluten_free]).
+                      with_raw(session[:search][:raw])
+
     #render 'index'
   end
   
@@ -57,7 +62,8 @@ class RecipesController < ApplicationController
     end
     
     def check_stored_queries
-      if session[:search].blank? || params.has_key?(:reset)
+      if params.has_key?(:reset) #|| session[:search].blank? 
+        # second condition no longer necessary, done in sign_in sessions helper
         session[:search] = Hash.new 
         Recipe::SEARCH_OPTIONS.each do |option|
           session[:search][option] = ''
