@@ -1,0 +1,51 @@
+= provide(:title, 'Resources')
+
+%h1 Resources
+
+.content#resources
+  #websites.info_box
+    %h2 Websites
+    -if @bulk_websites.present?
+      %h3 Buy Bulk
+      -@bulk_websites.each do |w|
+        .website
+          =link_to w, w.url
+          
+    -if @body_websites.present?
+      %h3 Natural Body Care
+      -@body_websites.each do |w|
+        .website
+          =link_to w, w.url
+          
+    -if @informational_websites.present?
+      %h3 Informational
+      -@informational_websites.each do |w|
+        .website
+          =link_to w, w.url
+  
+  #books.info_box
+    %h2 Books
+    -if @medicinal_books.present?
+      %h3 Medicinal Herbs
+      -@medicinal_books.each do |b|
+        .book
+          =b
+      
+    -if @environmental_books.present?
+      %h3 Environmental Books & Authors
+      -@environmental_books.each do |b|
+        .book
+          =b        
+
+  #movies.info_box
+    %h2 Movies
+    -if @drama_movies.present?
+      -@drama_movies.each do |m|
+        .movie
+          !=m
+          
+    -if @documentary_movies.present?
+      %h3 Documentaries
+      -@documentary_movies.each do |m|
+        .movie
+          !=m

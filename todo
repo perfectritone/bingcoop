@@ -1,17 +1,15 @@
 TODO
 
-Store in a session a hash of the last search options
-Clear this hash when the recipes_path is reached
-Automatically fill in the recipes form with the last search
+Pagination of recipes
+
+Add ability to add resources for user.
 
 Allow a basic user to delete themself
   this functionality/tests is currently commented out
   
 Favorite Recipes
 
-Search by multiple ingredients
-
-Search!!!
+Search by multiple ingredients, and name
 
 Edit Recipes
 Remove Ingredients through the edit recipes page and if one is typed by 

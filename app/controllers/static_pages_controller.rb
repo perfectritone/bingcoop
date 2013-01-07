@@ -11,15 +11,6 @@ class StaticPagesController < ApplicationController
   def products
   end
   
-  def personal_orders
-  end
-  
-  def recipes
-  end
-  
-  def resources
-  end
-  
   def contact
   end
 end

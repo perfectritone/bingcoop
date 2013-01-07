@@ -2,24 +2,27 @@
 #
 # Table name: recipes
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  dish_type  :string(255)
-#  season     :string(255)
-#  diet       :string(255)
-#  directions :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  dish_type   :string(255)
+#  season      :string(255)
+#  diet        :string(255)
+#  directions  :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  gluten-free :boolean          default(FALSE)
+#  raw         :boolean          default(FALSE)
+#  gluten_free :boolean          default(FALSE)
 #
 
 class Recipe < ActiveRecord::Base
 
-  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert", "Juice"=>"juice"}
+  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert", "Juice"=>"juice", "Snack"=>"snack" }
   SEASONS={"Any Season"=>"", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
   DIETS={"Any Diet"=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Meat"=>"meat"}
   
-  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert", "juice"=>"Juice"}
+  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert", "juice"=>"Juice", "snack"=>"Snack" }
   SEASONS_R={""=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
   DIETS_R={""=>"Any Diet", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "meat"=>"Meat"}
 

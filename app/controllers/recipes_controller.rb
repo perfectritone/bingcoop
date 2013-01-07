@@ -62,7 +62,7 @@ class RecipesController < ApplicationController
     end
     
     def check_stored_queries
-      if params.has_key?(:reset) #|| session[:search].blank? 
+      if params.has_key?(:reset) || session[:search].blank? 
         # second condition no longer necessary, done in sign_in sessions helper
         session[:search] = Hash.new 
         Recipe::SEARCH_OPTIONS.each do |option|

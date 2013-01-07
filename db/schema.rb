@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106171859) do
+ActiveRecord::Schema.define(:version => 20130107171134) do
+
+  create_table "books", :force => true do |t|
+    t.string   "name"
+    t.string   "author"
+    t.string   "kind"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "books", ["kind"], :name => "index_books_on_kind"
 
   create_table "ingredients", :force => true do |t|
     t.integer  "recipe_id"
@@ -25,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20130106171859) do
   add_index "ingredients", ["name"], :name => "index_ingredients_on_name"
   add_index "ingredients", ["recipe_id"], :name => "index_ingredients_on_recipe_id"
 
+  create_table "movies", :force => true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "url"
+  end
+
+  add_index "movies", ["kind"], :name => "index_movies_on_kind"
+
   create_table "recipes", :force => true do |t|
     t.string   "name"
     t.string   "dish_type"
@@ -36,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20130106171859) do
     t.integer  "user_id"
     t.boolean  "gluten-free", :default => false
     t.boolean  "raw",         :default => false
+    t.boolean  "gluten_free", :default => false
   end
 
   add_index "recipes", ["created_at"], :name => "index_recipes_on_created_at"
@@ -64,5 +87,17 @@ ActiveRecord::Schema.define(:version => 20130106171859) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "websites", :force => true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "location"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "websites", ["kind"], :name => "index_websites_on_kind"
 
 end

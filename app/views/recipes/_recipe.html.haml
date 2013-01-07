@@ -14,6 +14,12 @@
     %br
   -unless recipe.dish_type.nil?
     =recipe.display_dish_type
+    %br
+  -if recipe.gluten_free
+    Gluten-free
+    %br
+  -if recipe.raw
+    Raw
 .recipe_ingredients
   %h3
     Ingredients

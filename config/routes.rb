@@ -8,6 +8,7 @@ Coop::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :recipes
+  resources :resources, only: [:index]
 
   root :to => 'static_pages#home'
   
@@ -19,7 +20,6 @@ Coop::Application.routes.draw do
   match '/get_involved', to: 'static_pages#get_involved'
   match '/products', to: 'static_pages#products'
   match '/personal_orders', to: 'static_pages#personal_orders'
-  match '/resources', to: 'static_pages#resources'
   match '/contact', to: 'static_pages#contact'
   
   # The priority is based upon order of creation:

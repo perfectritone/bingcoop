@@ -6,7 +6,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
-require "rails/test_unit/railtie"
+# require "rails/test_unit/railtie" # use this for benchmarks, mv .test to test
 
 # require "rails/test_unit/railtie"
 

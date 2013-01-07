@@ -29,13 +29,13 @@ class Ingredient < ActiveRecord::Base
       name = (self.amount.to_r > 1 && self.amount.to_r != 0) ?
                 self.name.pluralize : self.name
       if self.unit.present?
-        return "#{self.amount} #{self.unit} #{name}"
+        return "#{self.amount} #{self.unit.capitalize} #{name}"
       else
         return "#{self.amount} #{name}"
       end
     else
       if self.unit.present?
-        return "#{self.unit} #{self.name}"
+        return "#{self.unit.capitalize} #{self.name}"
       else
         return self.name
       end
