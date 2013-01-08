@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
   def update
     if @recipe.update_attributes(params[:recipe])
       flash[:success] = "Recipe updated!"
-      redirect_to @recipe.id
+      redirect_to recipe_path @recipe
     else
       render 'edit'
     end
