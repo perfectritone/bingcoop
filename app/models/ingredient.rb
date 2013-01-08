@@ -14,10 +14,6 @@
 include ActionView::Helpers::TextHelper
 
 class Ingredient < ActiveRecord::Base
-  # t.string "name"
-  # t.string "amount"
-  # t.string "unit"
-
   attr_protected :id, :recipe_id
   belongs_to :recipe
   
@@ -40,6 +36,10 @@ class Ingredient < ActiveRecord::Base
         return self.name
       end
     end      
+  end
+  
+  def <=>(other)
+    self.created_at <=> other.created_at
   end
   
 end

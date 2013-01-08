@@ -24,7 +24,7 @@
   %h3
     Ingredients
   -if recipe.ingredients.any?
-    -recipe.ingredients.each do |ingredient|
+    -recipe.ingredients.sort.each do |ingredient|
       %p
         =ingredient.to_s
 .recipe_directions

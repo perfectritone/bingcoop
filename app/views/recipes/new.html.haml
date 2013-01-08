@@ -1,7 +1,7 @@
--provide :title, "Add a New Recipe"
+-provide :title, "Add your Recipe"
 
 %h1
   =yield :title
 
 #new_recipe_box.signbox
-  =render 'form'
+  =render 'form', action: (yield :title)
