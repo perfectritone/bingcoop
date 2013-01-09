@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
   end
   
   def get_involved
+    @suggestion = Suggestion.new
   end
   
   def products

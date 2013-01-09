@@ -39,6 +39,10 @@ module SessionsHelper
     end
   end
   
+  def admin_user?
+    current_user.admin?
+  end
+  
   def parent_of_recipe?(recipe_id)
     if signed_in?
       recipe = Recipe.find(recipe_id)

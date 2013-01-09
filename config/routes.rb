@@ -9,6 +9,7 @@ Coop::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :recipes
   resources :resources, only: [:index]
+  resources :suggestions, only: [:index, :show, :create]
 
   root :to => 'static_pages#home'
   

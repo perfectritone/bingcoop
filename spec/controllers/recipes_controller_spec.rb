@@ -14,6 +14,8 @@ describe RecipesController do
     }
   }
   
+  let(:ingredient) { FactoryGirl.create(:ingredient, user) }
+  
   let(:saved_recipe) { user.recipes.create!(recipe) }
   
   describe "GET #new" do
@@ -141,23 +143,38 @@ describe RecipesController do
   end
 
   describe "PUT #update" do
-    before do
-      @attr = { name: "Black Pete" }
-      #page.driver.put("/recipes/#{saved_recipe.id}", 
-        #{ params: { recipe: { name: "Black Pete" } } } )
-      put :update, id: saved_recipe.id, recipe: @attr
-      saved_recipe.reload
+    context "new name" do
+      before do
+        @attr = { name: "Black Pete" }
+        #page.driver.put("/recipes/#{saved_recipe.id}", 
+          #{ params: { recipe: { name: "Black Pete" } } } )
+        put :update, id: saved_recipe.id, recipe: @attr
+        saved_recipe.reload
+      end
+      
+      # STOP USING RESPONSE, or anything like that. Try to stick strictly
+      # to Capybara for all requests.
+      it { page.driver.status_code.should == 200 } 
+      
+      it "updates the model to the new name" do
+        Recipe.find(saved_recipe.id).name.should == "Black Pete"
+      end
+      it "other attributes remain the same" do
+        saved_recipe.season.should == "winter"
+      end
     end
-    
-    # STOP USING RESPONSE, or anything like that. Try to stick strictly
-    # to Capybara for all requests.
-    it { page.driver.status_code.should == 200 } 
-    
-    it "updates the model to the new name" do
-      Recipe.find(saved_recipe.id).name.should == "Black Pete"
+=begin
+    context "no name for ingredient" do
+      before do
+        @attr = { ingredient_attributes: {"0"=>{"name"=>""}} }
+        put :update, id: saved_recipe.id, recipe: @attr
+        saved_recipe.reload
+      end
+      
+      it "should not have any ingredients" do
+        saved_recipe.ingredients.should be_empty
+      end
     end
-    it "other attributes remain the same" do
-      saved_recipe.season.should == "winter"
-    end
+=end
   end
 end

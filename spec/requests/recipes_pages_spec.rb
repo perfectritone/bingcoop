@@ -11,7 +11,7 @@ describe "Recipe Pages" do
       visit new_recipe_path
     end
     
-    it { should have_selector("h1", text: "Add a New Recipe") }
+    it { should have_selector("h1", text: "Add your Recipe") }
   end
   
   describe "add a recipe form" do
@@ -20,7 +20,7 @@ describe "Recipe Pages" do
       visit new_recipe_path
     end
     
-    let(:submit) { "Add your recipe" }
+    let(:submit) { "Add your Recipe" }
 
     describe "with invalid information" do
       it "should not add a recipe" do
@@ -79,8 +79,8 @@ describe "Recipe Pages" do
     
       it { should have_content("1 Whole Lemon") }
       it { should have_content("2 Apples") }
-      it { should have_content("1/4 tsp Salt") }
-      it { should have_content("4 ounces Pepper") }
+      it { should have_content("1/4 Tsp Salt") }
+      it { should have_content("4 Ounces Pepper") }
       it { should have_content("1 Whole Lemon") }
       it { should have_content("1/2 Grape") }
     end

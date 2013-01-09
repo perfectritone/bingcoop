@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   
   validates_associated :recipes
   
+  validates_inclusion_of :admin, { in: [true, false] }
   private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64

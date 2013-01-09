@@ -25,6 +25,7 @@ group :test do
   gem 'factory_girl_rails', '1.4.0'
   gem 'test-unit'
   gem 'ruby-prof'
+  gem 'database_cleaner'
 end
 
 group :production do

@@ -11,3 +11,8 @@
   =link_to "Edit user", edit_user_path(@user.id)
   %br
   = link_to "Log out", signout_path, method: :delete
+  
+  -if admin_user? 
+    %br
+    %h3 Administrative Tasks
+    =link_to "Suggestions", suggestions_path

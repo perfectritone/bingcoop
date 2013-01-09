@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: recipes
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  dish_type   :string(255)
+#  season      :string(255)
+#  diet        :string(255)
+#  directions  :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  gluten-free :boolean          default(FALSE)
+#  raw         :boolean          default(FALSE)
+#  gluten_free :boolean          default(FALSE)
+#
+
 require 'spec_helper'
 
 describe Recipe do
