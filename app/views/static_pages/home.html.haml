@@ -10,28 +10,31 @@
     %p Smile and have a seat on one of our comfortable couches.
     %p No pressure to eat, buy, or do much of anything specifically. 
     %h3 Kick up your feet and see what comes your way!
-    
-  Located in the basement of Binghamton's University Union, the Food Co-op is a student run restaurant and grocery. With 
-  =link_to "daily hot lunches", "#tweet"
-  served at noon, and a bulk section with a variety of nuts, grains, and dried fruits, you'll find a variety of food unique to this establishment.
-  <br><br>
-  Often touted as the best meal on campus, the Co-op serves a mostly organic, vegetarian meal, often with gluten-free options, sourced from fresh ingredients. When local is an option, area farms supply produce, as well as eggs, milk, and cheese.
-  <br><br>
-  To find the Co-op, first enter the Union by the bus stop, take the stairs down to the basement from the Tillman Lobby, and walk all the way down the hall. The Co-op can be found in the back right corner. With the current construction, this is the only way to access the Co-op.
-  <br><br>
-  %h4
-    Watch our 
-    =link_to "twitter", "https://twitter.com/bingfoodcoop"
-    and our
-    =link_to "facebook", "https://www.facebook.com/bingfoodcoop"
-    pages to find out what's being served today for lunch.
-  #tweet
+  #introduction
+    #home_sign
+      =image_tag "sign-cropped.jpg"
+    #intro_content
+      Located in the basement of Binghamton's University Union, the Food Co-op is a student run restaurant and grocery. With daily hot lunches (see
+      =link_to "below", "#tweet"
+      ) served at noon, and a bulk section with a variety of nuts, grains, and dried fruits, you'll find a variety of food unique to this establishment.
+      <br><br>
+      Often touted as the best meal on campus, the Co-op serves a mostly organic, vegetarian meal, often with gluten-free options, sourced from fresh ingredients. When local is an option, area farms supply produce, as well as eggs, milk, and cheese.
+      <br><br>
+      To find the Co-op, first enter the Union by the bus stop, take the stairs down to the basement from the Tillman Lobby, and walk all the way down the hall. The Co-op can be found in the back right corner. With the current construction, this is the only way to access the Co-op.
+      <br>
+  #twitter
+    %h4
+      Watch our 
+      =link_to "twitter", "https://twitter.com/bingfoodcoop"
+      and our
+      =link_to "facebook", "https://www.facebook.com/bingfoodcoop"
+      pages to find out what's being served today for lunch.
+    #tweet
     
 -content_for :left_box do
   =render 'shared/hours_box'
 
 -content_for :right_box do
-  #event_calendar.top_box
-    %h4#event_calendar_title Event Calendar
-    .event_date January 28th, 2013
-    .event_description Opening back up
+  .top_box
+    =render 'shared/event_calendar'
+  

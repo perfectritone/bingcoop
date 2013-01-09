@@ -1,13 +1,13 @@
  
 html {
-  font-family: "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
-  color: #333333;
-  background-color: #FFEDF4;
 }
 
 body {
-  font-size: 100%;
-  padding-bottom: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
+  color: #333333;
+  background-color: #FFEDF4;
+  line-height: 1.5em;
+  font-size: 18px;
 }
 
 h1 {
@@ -95,7 +95,6 @@ h5 {
   float: left;
   width: 70%;
   letter-spacing: 1px;
-  text-align: center;
 }
 
 #right_box {
@@ -162,4 +161,22 @@ h5 {
 
 .event_description {
   margin-left: 1.5em;
+}
+
+#introduction {
+  #home_sign img {
+    float: right;
+    padding-left: 3em;
+    width: 225px;
+    height: 300px
+  }
+  #intro_content {
+    padding: 2em 3em 2em 3em;
+    /*text-align: justify;*/
+  }
+}
+
+#twitter {
+  padding-top: .5em;
+  clear: both;
 }
