@@ -33,13 +33,12 @@ h5 {
     ul.top_nav {
       position: absolute;
       left: 50%;
-      width: 60.8em;
-      margin-left: -30em;
-      list-style-type: none;
+      margin-left: -33em;
       padding: 0;
+      list-style-type: none;
 
       li {
-        width: 10em;
+        width: 8em;
         float: left;
         margin: 0;
         background-color: #999;
@@ -116,6 +115,10 @@ h5 {
   padding-bottom: 2em;
 }
 
+.info_box {
+  padding-bottom: 1.5em;
+}
+
 .content#products, .content#resources {
   text-align: left;
   margin: 0 auto;
@@ -130,6 +133,11 @@ h5 {
 .banner {
   margin: 0 auto;
   width: 1086px;
+  a:hover {
+    img {
+      -moz-border-shadow: 20px 20px 50px 20px yellow;
+    }
+  }
 }
 
 .signbox {
@@ -179,4 +187,10 @@ h5 {
 #twitter {
   padding-top: .5em;
   clear: both;
+  h4 { text-align: center; }
+}
+
+.asterisk {
+  font-size: 80%;
+  padding: 1em 0;
 }

@@ -18,6 +18,7 @@ Coop::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   
   match '/about', to: 'static_pages#about'
+  match '/menu', to: 'static_pages#menu'
   match '/get_involved', to: 'static_pages#get_involved'
   match '/products', to: 'static_pages#products'
   match '/personal_orders', to: 'static_pages#personal_orders'

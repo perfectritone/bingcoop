@@ -5,6 +5,9 @@ class StaticPagesController < ApplicationController
   def about
   end
   
+  def menu
+  end
+  
   def get_involved
     @suggestion = Suggestion.new
   end

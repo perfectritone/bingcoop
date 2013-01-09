@@ -4,13 +4,17 @@
   .nav_container
     %nav
       %ul.top_nav
+        %li#home_button
+          =link_to "Home", root_path
         %li#about_button
           = link_to "About Us", about_path
           %ul.sub_nav
             %li= link_to "Mission", about_path + "#mission"
-            %li= link_to "History", about_path + "#history"
+            -#%li= link_to "History", about_path + "#history"
             %li= link_to "Know Your Food", about_path + "#know_your_food"
             %li= link_to "How We Run", about_path + "#how_we_run"
+        %li#menu_button
+          =link_to "Menu", menu_path
         %li#get_involved_button
           = link_to "Get Involved", get_involved_path
           %ul.sub_nav
@@ -21,9 +25,9 @@
         %li#products_button
           = link_to "Products", products_path
           %ul.sub_nav
-            %li= link_to "Bulk", products_path + "#bulk"
-            %li= link_to "Meat", products_path + "#meat"
             %li= link_to "Dairy & Eggs", products_path + "#dairy_eggs"
+            %li= link_to "Bulk", products_path + "#bulk"
+            -#%li= link_to "Meat", products_path + "#meat"
             %li= link_to "Herbs", products_path + "#herbs"
             %li= link_to "Coffee", products_path + "#coffee"
         %li#recipes_button
@@ -38,5 +42,5 @@
             %li= link_to "Websites", resources_path + "#websites"
             %li= link_to "Books", resources_path + "#books"
             %li= link_to "Movies", resources_path + "#movies"
-            %li= link_to "Zines", resources_path + "#zines"
+            -#%li= link_to "Zines", resources_path + "#zines"
         %li= link_to "Contact Us", contact_path
