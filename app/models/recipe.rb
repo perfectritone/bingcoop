@@ -18,11 +18,11 @@
 
 class Recipe < ActiveRecord::Base
 
-  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert", "Juice"=>"juice", "Snack"=>"snack" }
+  DISH_TYPES={"Any Dish Type"=>"", "Breakfast"=>"breakfast", "Lunch"=>"lunch", "Soup"=>"soup", "Entree"=>"entree", "Dessert"=>"dessert", "Juice"=>"juice", "Snack"=>"snack", "Side"=>"side" }
   SEASONS={"Any Season"=>"", "Fall"=>"fall", "Winter"=>"winter", "Spring"=>"spring", "Summer"=>"summer"}
   DIETS={"Any Diet"=>"", "Vegan"=>"vegan", "Vegetarian"=>"vegetarian", "Meat"=>"meat"}
   
-  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert", "juice"=>"Juice", "snack"=>"Snack" }
+  DISH_TYPES_R={""=>"Any Dish Type", "breakfast"=>"Breakfast", "lunch"=>"Lunch", "soup"=>"Soup", "entree"=>"Entree", "dessert"=>"Dessert", "juice"=>"Juice", "snack"=>"Snack", "side"=>"Side" }
   SEASONS_R={""=>"Any Season", "fall"=>"Fall", "winter"=>"Winter", "spring"=>"Spring", "summer"=>"Summer"}
   DIETS_R={""=>"Any Diet", "vegan"=>"Vegan", "vegetarian"=>"Vegetarian", "meat"=>"Meat"}
 
