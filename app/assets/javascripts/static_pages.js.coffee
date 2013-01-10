@@ -10,6 +10,13 @@ $ ->
       $('#about_button ul').hide()
   )
 
+  $('#menu_button').hover(
+    -> 
+      $('#menu ul').show()
+    -> 
+      $('#menu ul').hide()
+  )
+  
   $('#get_involved_button').hover(
     -> 
       $('#get_involved_button ul').show()
