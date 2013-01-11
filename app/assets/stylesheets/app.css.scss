@@ -200,3 +200,27 @@ h5 {
 .arrow {  
   font-size: 300%;
 }
+
+#search_divider {
+  border-top: 1px black solid;
+  width: 80%;
+}
+
+#search_box {
+  .search_option {
+    font-size: .8em;
+  }
+  
+  #reset_search {
+    color: blue;
+    cursor: pointer;
+  }
+}
+
+.align_left {
+  float: left;
+}
+
+.align_right {
+  float: right;
+}

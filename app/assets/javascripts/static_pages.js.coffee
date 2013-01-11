@@ -44,4 +44,11 @@ $ ->
     -> 
       $('#resources_button ul').hide()
   )
+  
+$ ->
+  $('#reset_search').click(
+    ->
+      $('#search_box input[type="checkbox"]').attr('checked', false);
+  )
+
 

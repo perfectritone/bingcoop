@@ -10,6 +10,7 @@ Coop::Application.routes.draw do
   resources :recipes
   resources :resources, only: [:index]
   resources :suggestions, only: [:index, :show, :create]
+  resources :searches, only: [:new, :create, :show]
 
   root :to => 'static_pages#home'
   

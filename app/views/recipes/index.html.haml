@@ -4,4 +4,7 @@
   = yield :title
 
 #recipes
-  =render partial: 'recipe', collection: @recipes
+  =render partial: 'shared/recipe', collection: @recipes
+
+-content_for :right_box do
+  =render 'shared/recipes_right_bar'

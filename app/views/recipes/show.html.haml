@@ -4,4 +4,5 @@
   = yield :title
 
 #recipes
-  =render partial: 'recipe', collection: [@recipe]
+  -#add a back button
+  =render partial: 'shared/recipe', collection: [@recipe]

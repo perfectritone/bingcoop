@@ -2,12 +2,17 @@ class RecipesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit, :update, :destroy]
   before_filter :correct_user, only: [:edit, :update]
 
+=begin
   def index_old
     @recipes = Recipe.search(params)
     render 'index'
   end
+=end
   
   def index
+    @search = Search.new
+    @recipes = Recipe.all
+=begin
     check_stored_queries
     @recipes = Recipe.with_dish_type(session[:search][:dish_type]).
                       with_diet(session[:search][:diet]).
@@ -16,6 +21,7 @@ class RecipesController < ApplicationController
                       with_raw(session[:search][:raw])
 
     #render 'index'
+=end
   end
   
   def new

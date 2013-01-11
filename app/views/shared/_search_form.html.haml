@@ -1,0 +1,51 @@
+=form_for @search do |f|
+
+  %p
+    =f.label :diet
+    -Recipe::DIETS.to_a[1..-1].each do |k,v|
+      .search_option
+        =check_box("search", "diet", { multiple: true }, v, nil)
+        =f.label k
+       
+  .search_option
+    =check_box("search", "gluten_free", {}, '1', nil)
+    =f.label :gluten_free, "Gluten-free"
+    <br>
+    =check_box("search", "raw", {}, '1', nil)
+    =f.label :raw
+  
+  %p
+    =f.label :season
+    -Recipe::SEASONS.to_a[1..-1].each do |k,v|
+      .search_option
+        =check_box("search", "season", { multiple: true }, v, nil)
+        =f.label k
+
+  %p
+    =f.label :dish_type
+    -Recipe::DISH_TYPES.to_a[1..-1].each do |k,v|
+      .search_option
+        =check_box("search", "dish_type", { multiple: true }, v, nil)
+        =f.label k
+        
+  .submit.align_left
+    =f.submit "Search", class: "submit"  
+  #reset_search.align_right
+    Reset
+  %div{ style: "clear: both;" }
+  
+-#
+  %p
+    =f.label :diet
+    =f.select :diet, Recipe::DIETS.to_a
+
+  %p
+    =f.label :dish_type
+    =f.select :dish_type, Recipe::DISH_TYPES.to_a
+  
+  %p
+    =f.label :season
+    =f.select :season, Recipe::SEASONS.to_a
+
+  %p
+    = f.submit "Search", class: "submit"

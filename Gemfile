@@ -11,7 +11,6 @@ group :development do
   gem 'sqlite3', '1.3.5'
   gem 'guard-rspec', '0.5.5'
   gem 'brakeman', '1.9.0'
-  #gem "nifty-generators"
   gem "annotate"
 end
 

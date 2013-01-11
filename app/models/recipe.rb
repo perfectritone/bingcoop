@@ -108,6 +108,7 @@ class Recipe < ActiveRecord::Base
   end)
 =end
 
+=begin
   def self.search (search_params)
     if search_params.respond_to? :slice # ensure it quacks like a hash
       unique_search_params = search_params.slice *UNIQUE_SEARCH_OPTIONS
@@ -121,13 +122,14 @@ class Recipe < ActiveRecord::Base
     #conditions = conditions_clauses.join(' AND ')
     #Recipe.find(:all, :conditions => conditions)
   end
+=end
 
   private
   
     STRING_ATTRIBUTES = [:dish_type, :season, :diet]
-      
-    SEARCH_OPTIONS = [:diet, :dish_type, :season, :gluten_free, :raw]
-    UNIQUE_SEARCH_OPTIONS = [:name, :keyword, :ingredients]
+
+    #SEARCH_OPTIONS = [:diet, :dish_type, :season, :gluten_free, :raw]
+    #UNIQUE_SEARCH_OPTIONS = [:name, :keyword, :ingredients]
 
 
     def self.diet_conditions diet
