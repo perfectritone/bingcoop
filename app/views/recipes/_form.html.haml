@@ -10,12 +10,12 @@
     =f.select :diet, Recipe::DIETS.to_a
 
   %p
-    =f.label :dish_type
-    =f.select :dish_type, Recipe::DISH_TYPES.to_a
-  
-  %p
     =f.label :season
     =f.select :season, Recipe::SEASONS.to_a
+    
+  %p
+    =f.label :dish_type
+    =f.select :dish_type, Recipe::DISH_TYPES.to_a
     
   %b Ingredients
     

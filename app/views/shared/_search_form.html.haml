@@ -1,12 +1,15 @@
 =form_for @search do |f|
-
-  %p
+  Select some options below and
+  %span.submit
+    =f.submit "Search", class: "submit"
+  
+  %h3
     =f.label :diet
-    -Recipe::DIETS.to_a[1..-1].each do |k,v|
-      .search_option
-        =check_box("search", "diet", { multiple: true }, v, nil)
-        =f.label k
-       
+  -Recipe::DIETS.to_a.each do |k,v|
+    .search_option
+      =check_box("search", "diet", { multiple: true }, v, nil)
+      =f.label k
+  #half_a_line
   .search_option
     =check_box("search", "gluten_free", {}, '1', nil)
     =f.label :gluten_free, "Gluten-free"
@@ -14,22 +17,20 @@
     =check_box("search", "raw", {}, '1', nil)
     =f.label :raw
   
-  %p
+  %h3
     =f.label :season
-    -Recipe::SEASONS.to_a[1..-1].each do |k,v|
-      .search_option
-        =check_box("search", "season", { multiple: true }, v, nil)
-        =f.label k
+  -Recipe::SEASONS.to_a[1..-1].each do |k,v|
+    .search_option
+      =check_box("search", "season", { multiple: true }, v, nil)
+      =f.label k
 
-  %p
+  %h3
     =f.label :dish_type
-    -Recipe::DISH_TYPES.to_a[1..-1].each do |k,v|
-      .search_option
-        =check_box("search", "dish_type", { multiple: true }, v, nil)
-        =f.label k
+  -Recipe::DISH_TYPES.to_a.each do |k,v|
+    .search_option
+      =check_box("search", "dish_type", { multiple: true }, v, nil)
+      =f.label k
         
-  .submit.align_left
-    =f.submit "Search", class: "submit"  
   #reset_search.align_right
     Reset
   %div{ style: "clear: both;" }

@@ -53,6 +53,8 @@
 }
 
 #search_box {
+  width: 80%;
+  margin: 0 auto;
   .queries {
     text-align: right;
   }
@@ -60,5 +62,12 @@
     color: blue;
     text-decoration: none;
     .selected_query { color: green; }
+  }
+  h3 {
+	margin: .5em 0;
+	font-size: 1em;
+  }
+  #half_a_line {
+    padding: .3em 0;
   }
 }

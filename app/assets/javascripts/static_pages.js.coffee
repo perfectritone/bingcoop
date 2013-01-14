@@ -12,9 +12,9 @@ $ ->
 
   $('#menu_button').hover(
     -> 
-      $('#menu ul').show()
+      $('#menu_button ul').show()
     -> 
-      $('#menu ul').hide()
+      $('#menu_button ul').hide()
   )
   
   $('#get_involved_button').hover(

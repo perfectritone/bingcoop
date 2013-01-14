@@ -29,7 +29,7 @@ class Search
   end
     
   private
-    SEARCH_OPTIONS = { string: [:diet, :dish_type, :season],
+    SEARCH_OPTIONS = { string: [:diet, :dish_type],
                        boolean: [:gluten_free, :raw] }
     def find_recipes   
       conditions = Hash.new
@@ -38,6 +38,11 @@ class Search
       end
       SEARCH_OPTIONS[:boolean].each do |option|
         conditions[option] = (self.send(option) == '1') unless self.send(option).nil?
+      end
+      unless self.season.nil?
+        unless self.season.length == 4
+          conditions[:season] = self.season 
+        end
       end
       
       Recipe.find(:all, :conditions => conditions)

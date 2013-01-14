@@ -55,12 +55,12 @@ Ingredient.find_or_create_by_name!( "Raisons or Dried Cranberries", amount: "1/4
 Ingredient.find_or_create_by_name!( "Chopped Walnuts", amount: "1/4-1/2", unit: "Cups" ) { |i| i.recipe_id = recipe_3.id }
 
 recipe_4 = Recipe.find_or_create_by_name!("Roasted Butternut Squash", 
-  dish_type: "side", season: "fall", diet: "",  gluten_free: false, raw: false,
+  dish_type: "side", season: "fall", diet: "vegan",  gluten_free: true, raw: false,
   directions: "Pre-heat oven to 425 degrees. Remove skin from butternut squash with a sharp knife. Compost seeds or use them in some other way. Cut squash into cubes, about 3/4 inch square or so. Mix all ingredients together and spread onto a cookie sheet. (Consider using foil on the sheet, or spraying with cooking oil for easier clean up.) Bake for 13 minutes, then flip cubes with a spatula. Bake for another 13-15 minutes. Remove from oven and enjoy!"
 ) { |r| r.user_id = tinamarie.id }
 Ingredient.find_or_create_by_name!( "Butternut Squash", amount: "2", unit: "Cups" ) { |i| i.recipe_id = recipe_4.id }
 Ingredient.find_or_create_by_name!( "Olive Oil", amount: "1", unit: "Tablespoon" ) { |i| i.recipe_id = recipe_4.id }
-Ingredient.find_or_create_by_name!( "Salt and Pepper", amount: "to taste (try 1 tsp salt, 1/2 tsp pepper)" ) { |i| i.recipe_id = recipe_4.id }
+Ingredient.find_or_create_by_name!( "Salt and Pepper", amount: "To taste (try 1 tsp salt, 1/2 tsp pepper)" ) { |i| i.recipe_id = recipe_4.id }
 
 Semester.find_or_create_by_id( 1, year: 2012, semester: 1, first_day: 243, last_day: 349 )
 Semester.find_or_create_by_id( 2, year: 2013, semester: 0, first_day: 24, last_day: 130 )
