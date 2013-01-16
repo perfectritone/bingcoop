@@ -17,7 +17,7 @@
       <br>
       -@pizzas.each do |pizza|
         =preserve pizza.to_haml
-        <br><br>
+        <br>
 
     #beverages.info_box
       %h2 Beverages
@@ -26,7 +26,7 @@
       <br>
       -@beverages.each do |beverage|
         =preserve beverage.to_haml
-        <br><br>
+        <br>
 
     #desserts_and_snacks.info_box
       %h2 Desserts &amp; Snacks
@@ -37,4 +37,4 @@
       <br>
       -@desserts_and_snacks.each do |dessert_or_snack|
         =preserve dessert_or_snack.to_haml
-        <br><br>
+        <br>

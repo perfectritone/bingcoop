@@ -9,7 +9,6 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
-/*
 $(function() {
   $('#search_box form').submit(function() {
     var valuesToSubmit = $(this).serialize();
@@ -24,11 +23,3 @@ $(function() {
     return false;
   });
 });
-
-
-$(function() {
-  $('#search_box form').submit(function() {
-    $(this).submit();
-  });
-});
-*/

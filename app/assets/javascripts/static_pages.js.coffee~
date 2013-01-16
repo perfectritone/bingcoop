@@ -12,9 +12,9 @@ $ ->
 
   $('#menu_button').hover(
     -> 
-      $('#menu ul').show()
+      $('#menu_button ul').show()
     -> 
-      $('#menu ul').hide()
+      $('#menu_button ul').hide()
   )
   
   $('#get_involved_button').hover(
@@ -49,6 +49,10 @@ $ ->
   $('#reset_search').click(
     ->
       $('#search_box input[type="checkbox"]').attr('checked', false);
+  )
+  $('#search_box .submit')
+    .click('ajax:success', (data) ->
+      $('#recipes').html($("poop"))
   )
 
 

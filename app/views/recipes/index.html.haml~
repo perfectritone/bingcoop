@@ -6,7 +6,7 @@
 #recipes
   =debug(params)
   -#=render partial: 'shared/recipe', collection: @recipes
-  =render @recipes
+  render @recipes
 
 -content_for :right_box do
   =render 'shared/recipes_right_bar'

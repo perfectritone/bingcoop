@@ -53,17 +53,17 @@ class Recipe < ActiveRecord::Base
     "side"=>"Side"
   }
   SEASONS_R={
-    ""=>"Year-round", 
-    "fall"=>"Fall", 
-    "winter"=>"Winter", 
-    "spring"=>"Spring", 
-    "summer"=>"Summer"
+  ""=>"Year-round", 
+  "fall"=>"Fall", 
+  "winter"=>"Winter", 
+  "spring"=>"Spring", 
+  "summer"=>"Summer"
   }
   DIETS_R={
-    ""=>"Any Diet", 
-    "vegan"=>"Vegan", 
-    "vegetarian"=>"Vegetarian", 
-    "meat"=>"Meat"
+  ""=>"Any Diet", 
+  "vegan"=>"Vegan", 
+  "vegetarian"=>"Vegetarian", 
+  "meat"=>"Meat"
   }
 
   attr_protected :user_id

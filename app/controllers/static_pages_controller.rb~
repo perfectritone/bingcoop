@@ -6,9 +6,6 @@ class StaticPagesController < ApplicationController
   end
   
   def menu
-    @pizzas = Product.where( "food_type = ?", "pizza")
-    @beverages = Product.where( "food_type = ?", "beverage")
-    @desserts_and_snacks = Product.where( "food_type = ?", "dessert_or_snack")
   end
   
   def get_involved

@@ -31,17 +31,6 @@ class Ingredient < ActiveRecord::Base
   end
 =end
   
-=begin
-text ex machine
-vibrant ink
-rubyrobot
-rubycius
-railscasts black
-plumdumb
-gmate
-black pearl ii
-=end
-  
   def to_s
     if self.amount.present?
       name = (self.amount.to_r > 1 && self.amount.to_r != 0) ?

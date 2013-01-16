@@ -128,7 +128,7 @@ Product.find_or_create_by_name( "GT's Kombucha", food_type: "beverage", descript
 Product.find_or_create_by_name( "Guyaki Yerba Mate", food_type: "beverage", description: "Organic and Fair Trade tea (contains caffeine)", diet: "vegan", price: "2.71" ) 
 Product.find_or_create_by_name( "Mamma Chia (various flavors)", food_type: "beverage", description: "A chia seed based beverage made with organic ingredients. Contains 2000mg of Omega-3s, 10g fiber, 4g protein, and high in antioxidants", diet: "vegan", price: "3.13" ) 
 Product.find_or_create_by_name( "Oogave", food_type: "beverage", description: "Organic agave sweetened soda (we carry Grapefruit, Root Beer, and Cola)", diet: "vegan", price: "1.57" ) 
-Product.find_or_create_by_name( " Red Jacket Orchards Apple Cider", food_type: "beverage", description: "Fresh pressed juice from Geneva, NY", diet: "vegan", price: "1.79" ) 
+Product.find_or_create_by_name( " Red Jacket Orchards Apple Cider", food_type: "beverage", description: "Fresh pressed juice from Geneva, NY", diet: "vegan", price: "" ) 
 Product.find_or_create_by_name( "Red Jacket Orchards Raspberry Apple Juice", food_type: "beverage", description: "Fresh pressed juice from Geneva, NY", diet: "vegan", price: "1.79" ) 
 Product.find_or_create_by_name( "Red Jacket Orchards Strawberry Apple Juice", food_type: "beverage", description: "Fresh pressed juice from Geneva, NY", diet: "vegan", price: "1.79" ) 
 Product.find_or_create_by_name( "Steaz Green Tea Raspberry Soda", food_type: "beverage", description: "Made with organic and fair trade ingredients and fortified with B vitamins", diet: "vegan", price: "1.57" ) 
