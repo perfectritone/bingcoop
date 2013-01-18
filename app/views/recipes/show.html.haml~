@@ -5,4 +5,4 @@
 
 #recipes
   -#add a back button
-  =render partial: 'recipe', collection: [@recipe]
+  =render partial: 'shared/recipe', collection: [@recipe]

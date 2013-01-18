@@ -24,6 +24,7 @@ group :test do
   gem 'test-unit', '2.5.3'
   gem 'ruby-prof', '0.12.0'
   gem 'database_cleaner', '0.9.1'
+  gem "rcov", "~> 1.0.0"
 end
 
 group :production do

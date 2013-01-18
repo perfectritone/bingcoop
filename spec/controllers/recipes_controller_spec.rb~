@@ -7,8 +7,8 @@ describe RecipesController do
   let(:recipe) {  
     {
       name: "Schwarzen Peter",
-      dish_type: "dessert",
-      diet: "vegetarian",
+      dish_type: "",
+      diet: "",
       season: "winter",
       directions: "A lot of work!"
     }
