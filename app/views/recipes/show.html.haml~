@@ -1,8 +1,0 @@
-=provide(:title, @recipe.name)
-
-%h1
-  = yield :title
-
-#recipes
-  -#add a back button
-  =render partial: 'shared/recipe', collection: [@recipe]

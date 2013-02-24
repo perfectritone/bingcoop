@@ -1,35 +1,5 @@
 .top_box#right_box
   #search_box
-
     Want to find a certain kind of recipe?<br>
     #search_divider  
     =render 'shared/search_form'
-  
-  -#
-    Diet:
-    .queries
-      -Recipe::DIETS.each do |option_display_format, option_link_format|
-        =link_to option_display_format, "#{recipes_path}?diet=#{option_link_format}"
-        <br>
-    
-    .queries
-      <br>
-      =link_to "Gluten-Free", "#{recipes_path}?gluten_free=#{gluten_free?}"
-      <br>
-      =link_to "Raw", "#{recipes_path}?raw=#{raw?}"
-
-    Season: <br>
-    .queries
-      -Recipe::SEASONS.each do |option_display_format, option_link_format|
-        =link_to option_display_format, "#{recipes_path}?season=#{option_link_format}"
-        <br>
-
-
-    Dish Type: <br>
-    .queries
-      -Recipe::DISH_TYPES.each do |option_display_format, option_link_format|
-        =link_to option_display_format, "#{recipes_path}?dish_type=#{option_link_format}"
-        <br>
-    <br>
-    .queries
-      =link_to "Reset", "#{recipes_path}?reset"

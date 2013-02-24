@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem "rails", '3.2.12'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml-rails', '0.3.5'
 gem 'jquery-rails', '2.1.4'
@@ -22,8 +22,9 @@ group :test do
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails', '4.1.0'
   gem 'test-unit', '2.5.3'
-  gem 'ruby-prof', '0.12.0'
   gem 'database_cleaner', '0.9.1'
+  gem "mocha", "~> 0.12.10", require: false
+  gem "simplecov", "~> 0.7.1", require: false
 end
 
 group :production do
@@ -36,5 +37,3 @@ group :assets do
   gem 'haml', '3.1.7'
   gem 'uglifier', '1.3.0'
 end
-
-#gem "mocha", :group => 'test'

@@ -15,12 +15,12 @@ module SemestersHelper
     semester_info = Semester.where("year = ? AND semester = ?", year, semester).first
     
     if day_of_the_year.between?(semester_info.first_day, semester_info.last_day)
-      if day_of_the_week.between? 1, 6 # weekday?
+      if day_of_the_week.between? 1, 5 # weekday?
         if hour.between? 10, 15
           status.update({ status: "OPEN" })
         elsif hour.between? 4, 9
           status.update({ message: "We will be open today at 10am." })
-        elsif day_of_the_week != 6
+        elsif day_of_the_week != 5 # Not friday
           status.update({ message: "We are currently closed for the day, please come back tomorrow!" })
         else
           status.update({ message: "We are currently closed for the day, please come back next week!" })

@@ -1,0 +1,34 @@
+one:
+  name:        breakfast & vegetarian
+  dish_type:   breakfast
+  diet:        vegetarian
+
+two:
+  name:        breakfast & vegetarian & fall
+  dish_type:   breakfast
+  diet:        vegetarian
+  season:      fall
+
+three:
+  name:        entree & vegan
+  dish_type:   entree
+  diet:        vegan
+
+four:
+  name:        snack & meat & gf
+  dish_type:   snack
+  diet:        meat
+  gluten_free: true
+
+five:
+  name:        soup & vegetarian & raw
+  dish_type:   soup
+  diet:        vegetarian
+  raw:         true
+
+six:
+  name:        breakfast & vegetarian & raw & gf
+  dish_type:   breakfast
+  diet:        vegetarian
+  raw:         true
+  gluten_free: true
